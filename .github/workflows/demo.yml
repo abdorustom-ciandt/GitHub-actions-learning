@@ -38,5 +38,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Get Build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: website
+      - name: Output artifact
+        run: ls -l ${{ env.DIST_DIR }}
       - name: Deploy
         run: echo "Deploying..."

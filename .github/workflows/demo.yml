@@ -43,6 +43,6 @@ jobs:
         with:
           name: website
       - name: Output artifact
-        run: ls -l ${{ env.DIST_DIR }}
+        run: ls
       - name: Deploy
         run: echo "Deploying..."
